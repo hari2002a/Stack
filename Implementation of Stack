@@ -1,0 +1,72 @@
+#Implementation of Stack
+Arun reads lot of story books and he keeps all the story books piled as a single stack. 
+He wants to write a program to keep the order of the books in the pile. The program must implement the following functionalities.
+Add a book to the top of the pile when 1 is followed by the name of the book.
+Remove a book from the top of the pile when -1 is given as the input (provided the pile has at least one book).
+Print the name of the book on the top of the pile when 2 is given as the input (provided the pile has at least one book).
+The program must exit when O is given as the input.
+
+
+Sample Input:
+10 20 30 14 12
+
+Sample Output:
+Element at top of the stack:10
+
+Stack full:false
+Stack empty:true
+
+#include <stdio.h>
+int MAXSIZE = 8;
+int stack[8];
+int top = -1;
+int isempty() {
+    if(top = -1)
+       return 1;
+    else
+       return 0;
+}
+int isfull() {
+    if(top = MAXSIZE)
+       return 1;
+    else
+       return 0;
+}
+int peek() {
+    return stack[top];
+}
+int pop() {
+    int data;
+    if(!isempty()) {
+       data = stack[top];
+       top = top -1;
+       return data;
+    } else {
+        printf("clold not retrieve data, stack is empty.\n");
+    }
+}
+int push(int data) {
+   if(!isfull()) {
+      top = top + 1;
+      stack[top] = data;
+   } else {
+      printf("could not insert data, stack is full.\n");
+    }
+}
+int main() {
+int I;
+for(i=0;i<5;i++)
+{
+Scanf("%d",&i);
+    printf("Element at top of the stack: %d\n" ,i);
+    printf("Elements: \n");
+    while(!isempty()) {
+        int data = pop();
+        printf("%d\n",data);
+    }
+    printf("Stack full: %s\n" , isfull()?"true":"false");
+    printf("Stack empty: %s\n" , isempty()?"true":"false");
+    return 0;
+}
+    }
+    
